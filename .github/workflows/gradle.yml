@@ -39,23 +39,23 @@ jobs:
         run: ./gradlew test
         
             # 디렉토리 생성
-    - name: Make Directory
-      run: mkdir -p deploy
+      - name: Make Directory
+        run: mkdir -p deploy
         
-    # Jar 파일 복사
-    - name: Copy Jar
-      run: cp ./build/libs/*.jar ./deploy
+      # Jar 파일 복사
+      - name: Copy Jar
+        run: cp ./build/libs/*.jar ./deploy
 
-    - name: Make zip file
-      run: zip -r ./coinTalk.zip ./deploy
-      shell: bash
+      - name: Make zip file
+        run: zip -r ./coinTalk.zip ./deploy
+        shell: bash
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: AKIAUHFU7GUOHDZP3I6E
-        aws-secret-access-key: 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
-        aws-region: ap-northeast-2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
 
-    - name: Upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./coinTalk.zip s3://lastone-s3-bucket/
+      - name: Upload to S3
+        run: aws s3 cp --region ap-northeast-2 ./coinTalk.zip s3://lastone-s3-bucket/
