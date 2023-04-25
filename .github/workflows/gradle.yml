@@ -69,8 +69,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws deploy create-deployment \
-          --application-name cicd-ec2-deploy \
-          --deployment-group-name code-deploy \
+          --application-name ProjectCicd \
+          --deployment-group-name ProjectCicd-group \
           --file-exists-behavior OVERWRITE \
           --s3-location bucket=lastone-s3-bucket,bundleType=zip,key=cicd.zip \
           --region ap-northeast-2
