@@ -72,5 +72,5 @@ jobs:
           --application-name cicd-ec2-deploy \
           --deployment-group-name code-deploy \
           --file-exists-behavior OVERWRITE \
-          --s3-location bucket=lastone-s3-bucket,bundleType=zip,key=cicd.zip \ 
+          --s3-location bucket=lastone-s3-bucket,bundleType=zip,key=cicd.zip \
           --region ap-northeast-2
