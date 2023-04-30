@@ -71,4 +71,3 @@ jobs:
             --deployment-config-name CodeDeployDefault.AllAtOnce \
             --file-exists-behavior OVERWRITE \
             --s3-location bucket=lastone-s3-bucket,bundleType=zip,key=cicd.zip \
-            --region ap-northeast-2
