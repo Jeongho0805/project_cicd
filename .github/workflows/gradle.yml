@@ -67,8 +67,11 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: aws deploy create-deployment --application-name cicd-deploy \
-          --deployment-group-name cicd-deploy-group \
-          --file-exists-behavior OVERWRITE \
-          --s3-location bucket=lastone-s3-bucket,bundleType=zip,key=cicd.zip \
-          --region ap-northeast-2
+        run: |
+          aws deploy create-deployment \
+            --application-name cicd-deploy \
+            --deployment-group-name cicd-deploy-group \
+            --deployment-config-name CodeDeployDefault.AllAtOnce \
+            --file-exists-behavior OVERWRITE \
+            --s3-location bucket=lastone-s3-bucket,bundleType=zip,key=cicd.zip \
+            --region ap-northeast-2
