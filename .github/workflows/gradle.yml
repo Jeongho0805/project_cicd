@@ -60,7 +60,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./cicd.zip s3://lastone-s3-bucket/cicd.zip
+        run: aws s3 cp --region ap-northeast-2 ./cicd.zip s3://jeongho-cicd-bucket/cicd.zip
         
       # Deploy
       - name: Deploy
@@ -70,4 +70,4 @@ jobs:
             --deployment-group-name cicd-deploy-group \
             --deployment-config-name CodeDeployDefault.AllAtOnce \
             --file-exists-behavior OVERWRITE \
-            --s3-location bucket=lastone-s3-bucket,bundleType=zip,key=cicd.zip \
+            --s3-location bucket=jeongho-cicd-bucket,bundleType=zip,key=cicd.zip \
