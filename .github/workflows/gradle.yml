@@ -71,3 +71,7 @@ jobs:
             --deployment-config-name CodeDeployDefault.AllAtOnce \
             --file-exists-behavior OVERWRITE \
             --s3-location bucket=jeongho-cicd-bucket,bundleType=zip,key=cicd.zip \
+
+      # execute deploy.sh
+      - name: Execute deploy.sh
+        run: cd /home/ubuntu/app && sh deploy.sh
