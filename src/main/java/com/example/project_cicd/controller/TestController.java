@@ -10,6 +10,6 @@ public class TestController {
 
     @GetMapping
     public String test() {
-        return "변경 완료";
+        return "한번더 테스트";
     }
 }
