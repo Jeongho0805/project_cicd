@@ -74,4 +74,4 @@ jobs:
 
       # execute deploy.sh
       - name: Execute deploy.sh
-        run: cd /home/ubuntu/app && sh deploy.sh
+        run: sh deploy.sh
