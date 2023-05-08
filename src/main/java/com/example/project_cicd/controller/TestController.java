@@ -10,6 +10,6 @@ public class TestController {
 
     @GetMapping
     public String test() {
-        return "cicd테스트";
+        return "실행권한 변경 후 테스트";
     }
 }
