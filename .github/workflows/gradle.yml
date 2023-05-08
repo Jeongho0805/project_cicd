@@ -75,4 +75,4 @@ jobs:
       # execute deploy.sh
       - name: Execute deploy.sh
         shell: bash
-        run: cd ./deploy && sh deploy.sh
+        run: sh ~/app/deploy.sh
