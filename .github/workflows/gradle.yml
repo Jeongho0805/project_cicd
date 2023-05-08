@@ -43,7 +43,6 @@ jobs:
       - name: Copy appspec.yml
         run: cp appspec.yml ./deploy
 
-
       # script files 복사
       - name: Copy script
         run: cp ./scripts/*.sh ./deploy
@@ -71,8 +70,4 @@ jobs:
             --deployment-config-name CodeDeployDefault.AllAtOnce \
             --file-exists-behavior OVERWRITE \
             --s3-location bucket=jeongho-cicd-bucket,bundleType=zip,key=cicd.zip \
-
-      # execute deploy.sh
-      - name: Execute deploy.sh
-        shell: bash
-        run: sh /home/ubuntu/app/deploy.sh
+  
