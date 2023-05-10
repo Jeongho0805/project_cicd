@@ -12,4 +12,9 @@ public class TestController {
     public String test() {
         return "나 성공한거야? ㅜㅜ";
     }
+
+    @GetMapping("jeongho")
+    public String test2() {
+        return "경로 계층 구조 매칭 성공";
+    }
 }
