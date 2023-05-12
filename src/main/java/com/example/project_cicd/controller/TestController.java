@@ -16,7 +16,7 @@ public class TestController {
     @GetMapping
     public String test() {
         log.info("requestUri => api");
-        return "무중단 배포 테스트!";
+        return "무중단 배포 테스트! 한번더 바꾸기";
     }
 
     @GetMapping("/jeongho")
