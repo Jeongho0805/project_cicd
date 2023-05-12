@@ -19,6 +19,9 @@ public class TestController {
         return "무중단 배포 테스트! 한번더 바꾸기";
     }
 
+    @GetMapping("/health")
+    public void healthCheck() {}
+
     @GetMapping("/jeongho")
     public String test2() {
         log.info("requestUri => api/jeongho");
