@@ -16,7 +16,7 @@ public class TestController {
     @GetMapping
     public String test() {
         log.info("requestUri => api");
-        return "Version 1.1";
+        return "Version 1.2";
     }
 
     @GetMapping("/health")
